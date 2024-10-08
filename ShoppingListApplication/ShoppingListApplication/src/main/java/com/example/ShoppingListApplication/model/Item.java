@@ -17,6 +17,7 @@ public class Item {
     private Long id;
     private String name;
     private String category;
+     private Long quantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="shopping_list_id", nullable = false)
@@ -53,5 +54,13 @@ public class Item {
 
     public void setShoppingList(ShoppingList shoppingList) {
         this.shoppingList = shoppingList;
+    }
+    
+    public Long getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Long quantity) {
+        this.quantity = quantity;
     }
 }
